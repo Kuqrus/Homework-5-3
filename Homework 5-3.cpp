@@ -212,8 +212,6 @@ public:
     }
 };
 
-
-
 class createSquare : public createQuad {
 public:
     createSquare(int s_a) : createQuad(s_a, s_a, s_a, s_a, 90, 90, 90, 90, "Квадрат") {
@@ -268,35 +266,32 @@ public:
     }
 };
 
+void printInfoFunc(createShape* shape) {
+    shape->printInfo();
+}
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
 
     createTriangle triangle(5, 5, 2, 80, 30, 70);
-    triangle.printInfo();
+    printInfoFunc(&triangle);
 
     createRightTriangle right_triangle(5, 3, 4, 40, 60);
-    right_triangle.printInfo();
 
     createIsoscelesTriangle isosceles_triangle(10, 5, 90, 45);
-    isosceles_triangle.printInfo();
 
     createEquilateralTriangle equal_triangle(13);
-    equal_triangle.printInfo();
 
     createQuad quad(10, 20, 40, 22, 80, 130, 70, 120);
-    quad.printInfo();
 
     createRectangle rectaingle(40, 20);
-    rectaingle.printInfo();
 
     createSquare square(30);
-    square.printInfo();
 
     createParallelogram parall(10, 20, 100, 80);
-    parall.printInfo();
+    printInfoFunc(&parall);
 
     createRhomd rhomd(10, 60, 100);
-    rhomd.printInfo();
 
 }
